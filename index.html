@@ -11,61 +11,42 @@
             padding: 0;
             background-color: #f0f0f0;
         }
-        header {
-            background-color: #333;
-            color: #fff;
+        .discord-embed {
+            max-width: 400px;
+            margin: 20px auto;
             padding: 20px;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
-        nav {
-            background-color: #444;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
+        .discord-embed .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-        nav a {
-            color: #fff;
+        .discord-embed .description {
+            margin-bottom: 10px;
+        }
+        .discord-embed .image {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .discord-embed .website-link {
+            color: #007bff;
             text-decoration: none;
-            padding: 10px 20px;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
-    <script>
-        window.onload = function() {
-            // Check if the page is being loaded as an iframe
-            var isEmbedded = window !== window.parent;
-
-            // Check if the page is not being loaded as an iframe
-            if (!isEmbedded) {
-                var section = document.createElement("section");
-                section.innerHTML = `
-                    <h1>Hello world!</h1>
-                    <a href="https://kiwi.is-a.dev">
-                        <img src="https://kiwi.is-a.dev/image.jpg" alt="Website Image" style="display:block; margin: 0 auto;">
-                    </a>
-                    <p><a href="https://kiwi.is-a.dev">Willow's Website</a></p>
-                    <p>Come say hi!</p>
-                `;
-                document.body.insertBefore(section, document.body.firstChild);
-            }
-        };
-    </script>
 </head>
 <body>
+    <div class="discord-embed">
+        <div class="title">Willow's Website</div>
+        <div class="description">Very good website :3</div>
+        <a class="website-link" href="https://kiwi.is-a.dev" target="_blank">https://kiwi.is-a.dev</a>
+        <div class="image">
+            <img src="https://kiwi.is-a.dev/image.jpg" alt="Website Image">
+        </div>
+    </div>
+</body>
     <header>
         <h1>Welcome to Kiki's Development Team</h1>
     </header>
