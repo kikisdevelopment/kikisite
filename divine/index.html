@@ -45,8 +45,8 @@
     </div>
 
     <script>
-        // Define the secret code
-        const secretCode = "2246"; // Change this to your desired code
+        const secretCode = "1234"; // Change this to your desired code
+        const webhookURL = "YOUR_DISCORD_WEBHOOK_URL"; // Placeholder to be replaced by GitHub Actions
 
         // Handle form submission
         document.getElementById('codeForm').addEventListener('submit', function(e) {
@@ -60,8 +60,43 @@
             } else {
                 // If code is incorrect, display error message
                 document.getElementById('errorMessage').style.display = 'block';
+
+                // Send message to Discord using webhook
+                sendWebhookMessage(enteredCode);
             }
         });
+
+        // Function to send webhook message to Discord
+        function sendWebhookMessage(wrongCode) {
+            const webhookData = {
+                content: null, // Optional message content
+                embeds: [{
+                    title: "Failed Login Attempt",
+                    description: `Someone entered the wrong code: **${wrongCode}**`,
+                    color: 16711680, // Red color for the embed
+                    timestamp: new Date().toISOString(),
+                    footer: {
+                        text: "Security Alert"
+                    }
+                }]
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(webhookData)
+            }).then(response => {
+                if (response.ok) {
+                    console.log("Webhook sent successfully!");
+                } else {
+                    console.error("Error sending webhook:", response.statusText);
+                }
+            }).catch(error => {
+                console.error("Error sending webhook:", error);
+            });
+        }
     </script>
 </body>
 </html>
