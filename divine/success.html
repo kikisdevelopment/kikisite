@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undercover Access Granted</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #0f0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            animation: glow 1s infinite alternate;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #ddd;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .secret-btn {
+            background-color: transparent;
+            border: 2px solid #0f0;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #0f0;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .secret-btn:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0;
+            }
+            to {
+                text-shadow: 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0, 0 0 60px #0f0;
+            }
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            color: #555;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Access Granted</h1>
+        <p>Welcome, Agent. You've successfully unlocked the next mission.</p>
+
+        <div class="button-container">
+            <button class="secret-btn" onclick="startMission()">Start Mission</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Classified Information | Secure Terminal | Agency 007</p>
+    </footer>
+
+    <script>
+        function startMission() {
+            alert("Mission briefing will be sent to your secure device.");
+            // Optional: Add a redirect here if you want to go to another page, for example:
+            // window.location.href = "mission-briefing.html";
+        }
+    </script>
+
+</body>
+</html>
