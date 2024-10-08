@@ -20,7 +20,7 @@ jobs:
 
       - name: Replace Discord Webhook URL with secret
         run: |
-          sed -i "s|YOUR_DISCORD_WEBHOOK_URL|${{ secrets.DISCORD_WEBHOOK_URL }}|g" public/index.html
+          sed -i "s|YOUR_DISCORD_WEBHOOK_URL|${{ secrets.DISCORD_WEBHOOK_URL }}|g" divine/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
