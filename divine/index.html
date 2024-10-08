@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta property="og:title" content="Divine Comps">
-    <meta property="og:description" content="Server made by cchlvzx (1193646147110187059)" />
-    <meta property="og:image" content="https://kiwi.is-a.dev/divine/icon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <meta http-equiv="refresh" content="0; URL=https://discord.gg/PD69DTQTC9" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Secret Page!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFC0CB;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid burlywood;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
+<body>
+    <div class="container">
+        <h2>Enter Secret Code</h2>
+        <form id="codeForm">
+            <input type="password" id="codeInput" placeholder="Enter code" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <p class="error" id="errorMessage">Incorrect code. Try again.</p>
+    </div>
+
+    <script>
+        // Define the secret code
+        const secretCode = "2246"; // Change this to your desired code
+
+        // Handle form submission
+        document.getElementById('codeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const enteredCode = document.getElementById('codeInput').value;
+
+            if (enteredCode === secretCode) {
+                // If code is correct, redirect to success page
+                window.location.href = "success.html"; // Change to your desired redirect URL
+            } else {
+                // If code is incorrect, display error message
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
 </html>
