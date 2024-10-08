@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undercover Access Granted</title>
+    <title>Access Granted - Hacker Mode</title>
     <style>
         body {
             margin: 0;
@@ -58,6 +58,28 @@
             color: #555;
             font-size: 0.8rem;
         }
+        /* Fake Hacker Terminal Styles */
+        .terminal {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 70%;
+            background-color: black;
+            border: 3px solid #0f0;
+            padding: 20px;
+            overflow-y: scroll;
+            color: #0f0;
+            font-size: 1rem;
+            box-shadow: 0px 0px 15px #0f0;
+            z-index: 9999;
+        }
+        .terminal h2 {
+            margin: 0;
+            color: #f00;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +89,7 @@
         <p>Welcome, Agent. You've successfully unlocked the next mission.</p>
 
         <div class="button-container">
-            <button class="secret-btn" onclick="startMission()">Start Mission</button>
+            <button class="secret-btn" onclick="showTerminal()">Activate Hacker Mode</button>
         </div>
     </div>
 
@@ -75,12 +97,52 @@
         <p>Classified Information | Secure Terminal | Agency 007</p>
     </footer>
 
+    <!-- Fake Hacker Terminal -->
+    <div class="terminal" id="terminal">
+        <h2>-- Terminal: Command Prompt --</h2>
+        <pre id="output"></pre>
+    </div>
+
     <script>
-        function startMission() {
-            alert("Mission briefing will be sent to your secure device.");
-            // Optional: Add a redirect here if you want to go to another page, for example:
-            // window.location.href = "mission-briefing.html";
+        const terminal = document.getElementById('terminal');
+        const output = document.getElementById('output');
+        let active = false;
+
+        // Show the fake terminal when button is clicked
+        function showTerminal() {
+            terminal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            active = true;
+            simulateMovement();
         }
+
+        // Simulate random movement of the terminal window
+        function simulateMovement() {
+            setInterval(() => {
+                if (active) {
+                    terminal.style.top = Math.random() * 20 + '%';
+                    terminal.style.left = Math.random() * 20 + '%';
+                }
+            }, 1000);
+        }
+
+        // Generate random "hacker" code when the user types
+        function randomCode() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=<>?';
+            let codeLine = '';
+            for (let i = 0; i < 60; i++) {
+                codeLine += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return codeLine;
+        }
+
+        // Add event listener to capture key presses
+        document.addEventListener('keydown', function() {
+            if (active) {
+                output.textContent += randomCode() + '\n';
+                terminal.scrollTop = terminal.scrollHeight; // Scroll to bottom
+            }
+        });
     </script>
 
 </body>
