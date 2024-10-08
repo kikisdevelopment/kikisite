@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top-Secret Page!</title>
+    <title>Code Access Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #FFC0CB;
+            background-color: #f4f4f4;
         }
         .container {
             text-align: center;
@@ -25,7 +25,7 @@
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
-            border: 1px solid burlywood;
+            border: 1px solid #ddd;
         }
         .error {
             color: red;
@@ -54,7 +54,8 @@
             const enteredCode = document.getElementById('codeInput').value;
 
             if (enteredCode === secretCode) {
-                // If code is correct, redirect to success page
+                // If code is correct, set localStorage flag and redirect
+                localStorage.setItem('codeEntered', 'true');
                 window.location.href = "success.html"; // Change to your desired redirect URL
             } else {
                 // If code is incorrect, display error message
