@@ -1,130 +1,139 @@
+<style>
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+scroll-behavior: smooth;
 }
 
 /* Body and Themes */
 body {
-    background-color: #36393f;
-    color: #dcddde;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 16px;
+background-color: #36393f;
+color: #dcddde;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 16px;
 }
 
-/* Discord-like Container Styles */
+body.light-theme {
+background-color: #f4f4f9;
+color: #333;
+}
+
+body.light-theme header,
+body.light-theme section {
+background-color: #ffffff;
+color: #333;
+}
+
 #top-bar {
-    width: 100%;
-    padding: 10px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #2f3136;
-    color: #ffffff;
-    border-bottom: 1px solid #202225;
+width: 100%;
+padding: 10px 30px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #2f3136;
+color: #ffffff;
+border-bottom: 1px solid #202225;
 }
 
 #top-bar h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+font-size: 1.5rem;
+font-weight: 700;
+letter-spacing: 0.5px;
 }
 
 #theme-icon {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+width: 30px;
+height: 30px;
+cursor: pointer;
 }
 
 /* Section Containers */
 header, section, footer {
-    max-width: 800px;
-    width: 90%;
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #2f3136;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+max-width: 800px;
+width: 90%;
+margin: 20px 0;
+padding: 20px;
+background-color: #2f3136;
+border-radius: 8px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 header img {
-    width: 100%;
-    border-radius: 8px;
+width: 100%;
+border-radius: 8px;
 }
 
 header h1 {
-    font-size: 1.8rem;
-    text-align: center;
-    margin: 15px 0;
-    color: #7289da;
+font-size: 1.8rem;
+text-align: center;
+margin: 15px 0;
+color: #7289da;
 }
 
 header p {
-    text-align: center;
-    margin: 10px 0;
-    color: #b9bbbe;
+text-align: center;
+margin: 10px 0;
+color: #b9bbbe;
 }
 
-/* Join Button */
 .join-btn {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #7289da;
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+display: block;
+width: fit-content;
+margin: 20px auto;
+padding: 10px 20px;
+background-color: #7289da;
+color: #ffffff;
+font-weight: bold;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s;
 }
 
 .join-btn:hover {
-    background-color: #5b6eae;
+background-color: #5b6eae;
 }
 
-/* Section Headings */
 section h2 {
-    font-size: 1.5rem;
-    color: #7289da;
-    margin-bottom: 10px;
-    text-align: center;
+font-size: 1.5rem;
+color: #7289da;
+margin-bottom: 10px;
+text-align: center;
 }
 
-/* Game Simulation Section */
 #game-container {
-    text-align: center;
+text-align: center;
 }
 
 .step {
-    display: none;
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #4f545c;
-    background-color: #36393f;
-    border-radius: 8px;
+display: none;
+margin: 20px 0;
+padding: 15px;
+border: 1px solid #4f545c;
+background-color: #36393f;
+border-radius: 8px;
 }
 
 .step.visible {
-    display: block;
+display: block;
 }
 
 .btn {
-    padding: 8px 16px;
-    margin-top: 20px;
-    color: #ffffff;
-    background-color: #7289da;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+padding: 8px 16px;
+margin-top: 20px;
+color: #ffffff;
+background-color: #7289da;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #5b6eae;
+background-color: #5b6eae;
 }
+</style>
